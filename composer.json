@@ -1,0 +1,76 @@
+{
+    "name": "optidash-ai/optidash-laravel",
+    "description": "Official Laravel Facade for Optidash - AI-powered image optimization and processing API. We will drastically speed-up your websites and save you money on bandwidth and storage.",
+    "type": "library",
+    "keywords": [
+        "optidash",
+        "image",
+        "image optimization",
+        "image processing",
+        "image resizing",
+        "image resizer",
+        "image cropping",
+        "image scaling",
+        "image masking",
+        "image watermarking",
+        "image filtering",
+        "image thumbnails",
+        "pic",
+        "picture",
+        "photo",
+        "face",
+        "face detection",
+        "visual",
+        "watermark",
+        "filter",
+        "crop",
+        "mask",
+        "resize",
+        "resizer",
+        "thumbs",
+        "thumbnail",
+        "thumbnails",
+        "jpg",
+        "jpeg",
+        "png",
+        "gif",
+        "svg",
+        "bmp",
+        "psd",
+        "tiff",
+        "webp",
+        "heic"
+    ],
+    "license": "MIT",
+    "homepage": "https://optidash.ai",
+    "authors": [
+        {
+            "name": "Optidash UG",
+            "email": "support@optidash.ai"
+        }
+    ],
+    "support": {
+        "email": "support@optidash.ai"
+    },
+    "require": {
+        "php": ">=5.5.0",
+        "laravel/framework": "^5.0|^6.0",
+        "optidash-ai/optidash-php": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Optidash\\OptidashLaravel\\": "src"
+        }
+    },
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Optidash\\OptidashLaravel\\OptidashServiceProvider"
+            ],
+            "aliases": {
+                "Optidash": "Optidash\\OptidashLaravel\\Facades\\Optidash"
+            }
+        }
+    }
+}

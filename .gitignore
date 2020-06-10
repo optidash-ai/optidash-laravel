@@ -1,0 +1,17 @@
+**/.DS_Store
+/vendor/
+
+composer.phar
+composer.lock
+
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+results
