@@ -33,9 +33,7 @@ or add the following entry to your `composer.json`:
 
 and then run `composer update`.
 
-Laravel uses Package Auto-Discovery, so doesn't require you to manually add the ServiceProvider.
-
-If you don't use auto-discovery, add the ServiceProvider to the providers array in `config/app.php`:
+Laravel uses Package Auto-Discovery, so doesn't require you to manually add the ServiceProvider. If you don't use auto-discovery, add the ServiceProvider to the providers array in `config/app.php`:
 
 ```php
 Optidash\OptidashLaravel\OptidashServiceProvider::class
@@ -56,6 +54,37 @@ php artisan vendor:publish --provider="Optidash\OptidashLaravel\OptidashServiceP
 ```
 
 The last step is to provide your Optidash API Key by either setting env variable `OPTIDASH_APIKEY` in your `.env` file or by directly editing the `config/optidash.php` file.
+
+If you don't have your Optidash API Key just yet, you can [sign-up for a free account](https://app.optidash.ai/signup) which comes with a monthly quota of 500 API calls.
+
+### Quick example
+
+This Laravel integration exposes all the operations available with the [Optidash API](https://docs.optidash.ai). The following example uses image `fetch` and streams the output file directly to disc with `toFile()` method:
+
+```php
+use Optidash;
+
+Optidash::fetch('https://www.website.com/image.jpg')->optimize(array(
+    'compression' => 'medium'
+))
+->resize(array(
+	'width' => 640,
+	'height' => 480
+))
+->filter(array(
+    'blur' => array(
+        'mode' => 'gaussian',
+        'value' => 10
+    )
+))
+->toFile('path/to/output.png', function ($error, $meta) {
+    if (!empty($error)) {
+        throw new Exception($error);
+    }
+
+    // You'll find the full JSON metadata within the `meta` variable
+});
+```
 
 ### License
 This software is distributed under the MIT License. See the [LICENSE](LICENSE) file for more information.
