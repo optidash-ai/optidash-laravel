@@ -54,7 +54,6 @@
     },
     "require": {
         "php": ">=5.5.0",
-        "laravel/framework": "^5.0|^6.0",
         "optidash/optidash": "dev-master"
     },
     "autoload": {
