@@ -45,7 +45,7 @@
     "homepage": "https://optidash.ai",
     "authors": [
         {
-            "name": "Optidash UG",
+            "name": "Optidash GmbH",
             "email": "support@optidash.ai"
         }
     ],
@@ -61,7 +61,8 @@
             "Optidash\\OptidashLaravel\\": "src"
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "extra": {
         "laravel": {
             "providers": [
